@@ -1,0 +1,16 @@
+# Patches
+- alwayscenter
+- centeredmaster
+- focusmaster
+- gaps
+- noborder
+- rainbowtags
+- resizehere
+- sticky
+- stickyindicator
+- swallow
+- tiledmove
+- titlecolor
+- underlinetags
+- unicode_ellipsis
+- winicon

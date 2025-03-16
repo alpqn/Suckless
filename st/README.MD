@@ -1,0 +1,9 @@
+# Patches
+- xresources
+- alpha
+- anysize
+- clickurl-nocontrol
+- clipboard
+- scrollback
+- scrollback-mouse
+- scrollback-mouse-altscreen

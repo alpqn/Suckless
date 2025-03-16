@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "?";
+static const char unknown_str[] = "";
 
 /* maximum command output length */
 #define CMDLEN 128
@@ -65,11 +65,13 @@ static const char unknown_str[] = "?";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
 static const struct arg args[] = {
 	/* function format          argument                                                   turn   signal */
 	{ wifi_essid,   "  󰖩 %s",    "wlp2s0"                                                  ,10    ,3     },
+    { run_command,  "%s",         "~/Scripts/bluetooth.sh"                                  ,0     ,4     },
     { battery_perc, " | 󰁹 %s%%", "BAT0"                                                        ,10           },
     { run_command,  " |  %s",   "~/Scripts/get-brightness.sh"                                 ,0     ,1     },
-    { run_command,  " |  %s",   "~/Scripts/get-volume.sh"                                     ,0     ,2     },
+    { run_command,  "%s",   "~/Scripts/get-volume.sh"                                     ,0     ,2     },
     { datetime,     "%s",        " | %a, %B %d | %I:%M %p "                                    ,5            },
 };
