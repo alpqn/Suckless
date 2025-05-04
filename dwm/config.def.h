@@ -123,7 +123,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_KP_Left,        setlayout,      {.v = &layouts[3]} },
     { MODKEY|ShiftMask,             XK_KP_Begin,       setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_space,          togglefloating, {0} },
-	{ MODKEY|ShiftMask,       		XK_q,              quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask,       		XK_q,              quit,           {0} },
 
 	// MINE //
 	{ MODKEY, 	                    XK_n, 		       togglenight,    {0} },
