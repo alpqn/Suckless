@@ -68,9 +68,9 @@ static const char unknown_str[] = "";
 
 static const struct arg args[] = {
 	/* function format          argument                                                   turn   signal */
-	{ wifi_essid,   "  󰖩 %s",    "wlp2s0"                                                  ,10    ,3     },
+	{ wifi_essid,   "  󰖩 %s",    "wlp0s20f3"                                                  ,10    ,3     },
     { run_command,  "%s",         "~/Scripts/bluetooth.sh"                                  ,0     ,4     },
-    { battery_perc, " | 󰁹 %s%%", "BAT0"                                                        ,10           },
+    { battery_perc, " | 󰁹 %s%%", "BAT1"                                                        ,10           },
     { run_command,  " |  %s",   "~/Scripts/get-brightness.sh"                                 ,0     ,1     },
     { run_command,  "%s",   "~/Scripts/get-volume.sh"                                     ,0     ,2     },
     { datetime,     "%s",        " | %a, %B %d | %I:%M %p "                                    ,5            },

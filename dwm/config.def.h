@@ -49,11 +49,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Librewolf", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "main",    NULL,     NULL,           0,         0,          0,           1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class             instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Librewolf",       NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "main",            NULL,     NULL,           0,         0,          0,           1,        -1 },
+	{ "St",              NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,              NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -106,7 +106,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_6,              view,           {.ui = ~0 } },
 
 	{ MODKEY,                       XK_q,              spawn,          {.v = dmenucmd } },
-	{ MODKEY,		                XK_Return,         spawn,          {.v = termcmd } },
+	{ MODKEY,		        XK_Return,         spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,              togglebar,      {0} },
 	{ MODKEY,                       XK_z,              focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_x,              focusstack,     {.i = -1 } },
@@ -116,37 +116,36 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,              setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_w, 	           zoom,           {0} },
 	{ MODKEY,                       XK_Tab,            view,           {0} },
-	{ ALT,             	            XK_F4,             killclient,     {0} },
+	{ ALT,             	        XK_F4,             killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_KP_Home,        setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_KP_Up,          setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_KP_Page_Up,     setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_KP_Left,        setlayout,      {.v = &layouts[3]} },
-    { MODKEY|ShiftMask,             XK_KP_Begin,       setlayout,      {.v = &layouts[4]} },
+        { MODKEY|ShiftMask,             XK_KP_Begin,       setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_space,          togglefloating, {0} },
-	{ MODKEY|ControlMask|ShiftMask,       		XK_q,              quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,              quit,           {0} },
 
 	// MINE //
-	{ MODKEY, 	                    XK_n, 		       togglenight,    {0} },
-	{ MODKEY,		                XK_s,		       togglesticky,   {0} },
-	{ MODKEY,		                XK_a,		       focusmaster,    {0} },
-	{ MODKEY,                       XK_F5,    	       spawn,          SHCMD("~/Scripts/brightness.sh 5%-") },
-	{ MODKEY|ShiftMask,             XK_F5,    	       spawn,          SHCMD("~/Scripts/brightness.sh 1%-") },
-	{ MODKEY,                       XK_F6,     	       spawn,          SHCMD("~/Scripts/brightness.sh 5%+") },
-	{ MODKEY|ShiftMask,             XK_F6,     	       spawn,          SHCMD("~/Scripts/brightness.sh 1%+") },
-    { ALT,                          XK_F10,    	       spawn,          SHCMD("~/Scripts/volume.sh toggle") },
-    { ALT,                          XK_F11,    	       spawn,          SHCMD("~/Scripts/volume.sh 5%-") },
-    { ALT|ShiftMask,                XK_F11,    	       spawn,          SHCMD("~/Scripts/volume.sh 1%-") },
-    { ALT,                          XK_F12,    	       spawn,          SHCMD("~/Scripts/volume.sh 5%+") },
-    { ALT|ShiftMask,                XK_F12,    	       spawn,          SHCMD("~/Scripts/volume.sh 1%+") },
-    { ALT|ShiftMask	,               XK_bracketleft,    spawn, 	       SHCMD("poweroff") },
-    { ALT|ShiftMask	,               XK_z,      	       spawn,          SHCMD("systemctl suspend") },
-    { ALT|ShiftMask	, 		        XK_comma,  	       spawn, 	       SHCMD("reboot") },
-    { ALT   ,		                XK_f,     	       spawn,	       SHCMD("librewolf") },
-    { ALT|ShiftMask,	           	XK_f,              spawn,	       SHCMD("librewolf --private-window") },
-    { ALT   ,		                XK_s,              spawn,	       SHCMD("thunar") },
-    { ALT   ,		                XK_e,              spawn,	       SHCMD("emacs") },
-    { MODKEY|ShiftMask,             XK_Print,	       spawn,          SHCMD("scrot") },
-    { MODKEY|ShiftMask,             XK_k,              spawn,          SHCMD("xkill") },
+	{ MODKEY, 	                XK_n, 		   togglenight,    {0} },
+	{ MODKEY,		        XK_s,		   togglesticky,   {0} },
+	{ MODKEY,		        XK_a,		   focusmaster,    {0} },
+	{ MODKEY,                       XK_F5,    	   spawn,          SHCMD("~/Scripts/brightness.sh 5%-") },
+	{ MODKEY|ShiftMask,             XK_F5,    	   spawn,          SHCMD("~/Scripts/brightness.sh 1%-") },
+	{ MODKEY,                       XK_F6,     	   spawn,          SHCMD("~/Scripts/brightness.sh 5%+") },
+	{ MODKEY|ShiftMask,             XK_F6,     	   spawn,          SHCMD("~/Scripts/brightness.sh 1%+") },
+        { ALT,                          XK_F10,    	   spawn,          SHCMD("~/Scripts/volume.sh toggle") },
+        { ALT,                          XK_F11,    	   spawn,          SHCMD("~/Scripts/volume.sh 5%-") },
+        { ALT|ShiftMask,                XK_F11,    	   spawn,          SHCMD("~/Scripts/volume.sh 1%-") },
+        { ALT,                          XK_F12,    	   spawn,          SHCMD("~/Scripts/volume.sh 5%+") },
+        { ALT|ShiftMask,                XK_F12,    	   spawn,          SHCMD("~/Scripts/volume.sh 1%+") },
+        { ALT|ShiftMask	,               XK_bracketleft,    spawn, 	   SHCMD("poweroff") },
+        { ALT|ShiftMask	,               XK_z,      	   spawn,          SHCMD("systemctl suspend") },
+        { ALT|ShiftMask	, 		XK_comma,  	   spawn, 	   SHCMD("reboot") },
+        { ALT   ,		        XK_f,     	   spawn,	   SHCMD("librewolf") },
+        { ALT|ShiftMask,	        XK_f,              spawn,	   SHCMD("librewolf --private-window") },
+        { ALT   ,		        XK_s,              spawn,	   SHCMD("thunar") },
+        { MODKEY|ShiftMask,             XK_Print,          spawn,          SHCMD("scrot") },
+        { MODKEY|ShiftMask,             XK_k,              spawn,          SHCMD("xkill") },
 	// MINE //
 };
 
