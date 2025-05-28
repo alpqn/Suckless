@@ -86,7 +86,7 @@ static const Layout layouts[] = {
 // MINE //
 
 static int nightlight_on = 0;
-static void togglenight(const Arg *arg) { nightlight_on ? system("sct") : system("sct 3000"); nightlight_on ^= 1; }
+static void togglenight(const Arg *arg) { nightlight_on ? system("sct") : system("sct 4000"); nightlight_on ^= 1; }
 
 // MINE //
 
@@ -107,13 +107,20 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_q,              spawn,          {.v = dmenucmd } },
 	{ MODKEY,		        XK_Return,         spawn,          {.v = termcmd } },
+	{ ALT   ,		        XK_Return,         spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,              togglebar,      {0} },
 	{ MODKEY,                       XK_z,              focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_x,              focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_apostrophe,     incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_semicolon,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_k,              setmfact,       {.f = -0.01} },
 	{ MODKEY,                       XK_k,              setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,              setmfact,       {.f = +0.01} },
 	{ MODKEY,                       XK_l,              setmfact,       {.f = +0.05} },
+	{ ALT|ShiftMask,                XK_k,              setmfact,       {.f = -0.01} },
+	{ ALT,                          XK_k,              setmfact,       {.f = -0.05} },
+	{ ALT|ShiftMask,                XK_l,              setmfact,       {.f = +0.01} },
+	{ ALT,                          XK_l,              setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_w, 	           zoom,           {0} },
 	{ MODKEY,                       XK_Tab,            view,           {0} },
 	{ ALT,             	        XK_F4,             killclient,     {0} },
