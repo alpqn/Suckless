@@ -1,34 +1,34 @@
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gap pixel between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int showlayout         = 0;        /* 0 means no layout indicator */
-static const int iconsize           = 12;       /* icon size */
-static const int iconspacing        = 5;        /* space between icon and title */
-static const char *fonts[]          = { "Mononoki Nerd Font Propo:style= Bold:size=10" };
-static const char dmenufont[]       = { "Mononoki Nerd Font:size=10" };
-static const char col_gray1[]       = "#000000";
-static const char col_gray3[]       = "#085400";
-static const char white[]       	= "#ffffff";
-static const char col_cyan[]        = "#04a3bf";
-static const char background[]      = "#b05151";
-static const char color_1[]      	= "#9c0699";
+static const unsigned int borderpx = 2;        /* border pixel of windows */
+static const unsigned int gappx    = 3;        /* gap pixel between windows */
+static const unsigned int snap     = 32;       /* snap pixel */
+static const int swallowfloating   = 0;        /* 1 means swallow floating windows by default */
+static const int showbar           = 1;        /* 0 means no bar */
+static const int topbar            = 1;        /* 0 means bottom bar */
+static const int showlayout        = 0;        /* 0 means no layout indicator */
+static const int iconsize          = 12;       /* icon size */
+static const int iconspacing       = 5;        /* space between icon and title */
+static const char *fonts[]         = { "Mononoki Nerd Font Propo:style= Bold:size=10" };
+static const char dmenufont[]      = { "Mononoki Nerd Font:size=10" };
+static const char col_gray1[]      = "#000000";
+static const char col_gray3[]      = "#085400";
+static const char white[]          = "#ffffff";
+static const char col_cyan[]       = "#04a3bf";
+static const char background[]     = "#b05151";
+static const char color_1[]        = "#9c0699";
 
-static const unsigned int ulinepad	    = 0;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinepad      = 0;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 	         	= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
-
+static const int ulineall 	        = 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const char *colors[][3] = {
-	/*               fg(text)         bg           border   */
-	[SchemeNorm]   = { white, 		background,    col_gray3 },
-	[SchemeSel]    = { white, 		background,    color_1	 },
-	[SchemeTitle]  = { white,	    background,    col_gray1 },
+	/*               fg(text)     bg             border   */
+	[SchemeNorm]   = { white,     background,    col_gray3 },
+	[SchemeSel]    = { white,     background,    color_1	 },
+	[SchemeTitle]  = { white,     background,    col_gray1 },
 };
+
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
 static const XPoint stickyiconbb    = {4,8};	/* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
@@ -47,9 +47,8 @@ static const char *tagsel[][2] = {
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class             instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	 *	WM_NAME(STRING) = title	 */
+        /* class             instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Librewolf",       NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "main",            NULL,     NULL,           0,         0,          0,           1,        -1 },
 	{ "St",              NULL,     NULL,           0,         0,          1,           0,        -1 },
@@ -57,9 +56,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const float mfact        = 0.50; /* factor of master area size [0.05..0.95] */
+static const int nmaster        = 1;    /* number of clients in master area */
+static const int resizehints    = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
